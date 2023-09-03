@@ -1,0 +1,92 @@
+.App{
+    height: 960px;
+    background: #000000 url("../public/assets/images/keyart.jpg") center no-repeat;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-new{
+    width: 260px;
+    height: 90px;
+    background: url("../public/assets/images/btn-play1.png") center center no-repeat;
+    background-size: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2f2f25;
+    font-weight: bold;
+    margin-top: 30px;
+}
+.btn-new:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+}
+.card-grid{
+    max-width: 860px;
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.copyright-p{
+    font-size: 0.6em;
+    margin-bottom: 0;
+}
+h1{
+    width: 100%;
+    height: 150px;
+    margin: 0;
+    padding-bottom: 5px;
+    position: relative;
+}
+h1 img{
+    width: 300px;
+    position: absolute;
+    top: -50%;
+    left: 42%;
+    z-index: 100;
+}
+.div-h1{
+    width: 100%;
+    min-height: 5px;
+    background-color: #90A900;
+    position: relative;
+    top: -3px;
+}
+.div-h1::after{
+    content: "";
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    margin-left: -60px; /* Ajustez cette valeur pour la largeur du triangle */
+    border-width: 60px; /* Ajustez cette valeur pour la taille du triangle */
+    border-style: solid;
+    border-color: #90A900 transparent transparent ;
+}
+.div-display{
+    width: 80%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.score{
+    color: #90A900;
+    padding: 5px;
+    border: #90A900 2px solid;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+.span-score{
+    width: 40px;
+}
+a{
+    text-decoration: none !important;
+    color: #90A900;
+}
+.a-github{
+    font-size: 0.6em;
+    margin: 0;
+}
