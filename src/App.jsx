@@ -70,48 +70,64 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      <h1><img src="./assets/images/Dofus_Logo.png" alt="logo dofus match" /></h1>
-      <div className='div-h1'></div>
-      <div className='div-display'>
-        <div className='btn-new' onClick={shuffleCards}>
-          <span>Nouvelle Partie</span>
+    <>
+      <header>
+        <h1>
+          <img src='./assets/images/Dofus_Logo.png' alt='logo dofus match' />
+          <div className='div-h1'></div>
+        </h1>
+      </header>
+      <main>
+        <div className='div-display'>
+          <div className='btn-new' onClick={shuffleCards}>
+            <span>Nouvelle Partie</span>
+          </div>
+          <div className='score'>
+            Nombre d'essai : <span className='span-score'>{turns}</span>
+          </div>
         </div>
-        <div className='score'>
-          Nombre d'essai : <span className='span-score'>{turns}</span>
+        <div className='div-grid'>
+          <div className='card-grid'>
+            {cards.map((card) => (
+              <SingleCard
+                key={card.id}
+                card={card}
+                handleChoice={handleChoice}
+                flipped={
+                  card === choiceOne || card === choiceTwo || card.matched
+                }
+                disabled={disabled}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-      <div className='card-grid'>
-        {cards.map((card) => (
-          <SingleCard
-            key={card.id}
-            card={card}
-            handleChoice={handleChoice}
-            flipped={card === choiceOne || card === choiceTwo || card.matched}
-            disabled={disabled}
-          />
-        ))}
-      </div>
-      <div className='copyright-div'>
-        <p className='copyright-p'>
-          Dofus est un MMORPG édité par{" "}
-          <a rel='noreferrer' target='_blank' href='https://www.ankama.com/fr'>
-            Ankama.
-          </a>{" "}
-          " Dofus Match " est un site non-officiel sans aucun lien avec Ankama.
-          Toutes les illustrations sont la propriété d'Ankama Studio et de
-          Dofus.
-        </p>
-        <a
-          className='a-github'
-          rel='noreferrer'
-          target='_blank'
-          href='https://github.com/BruandT'
-        >
-          Ymokay
-        </a>
-      </div>
-    </div>
+      </main>
+      <footer>
+        <div className='copyright-div'>
+          <p className='copyright-p'>
+            Dofus est un MMORPG édité par{" "}
+            <a
+              rel='noreferrer'
+              target='_blank'
+              href='https://www.ankama.com/fr'
+            >
+              Ankama.
+            </a>{" "}
+            " Dofus Match " est un site non-officiel sans aucun lien avec
+            Ankama. Toutes les illustrations sont la propriété d'Ankama Studio
+            et de Dofus.
+          </p>
+          <a
+            className='a-github'
+            rel='noreferrer'
+            target='_blank'
+            href='https://github.com/BruandT'
+          >
+            Ymokay
+          </a>
+        </div>
+      </footer>
+    </>
   );
 }
 
