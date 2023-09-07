@@ -29,6 +29,7 @@ footer{
     font-weight: bold;
     grid-column: 1;
     justify-self: end;
+    z-index: 25;
 }
 .btn-new:hover{
     transform: scale(1.02);
@@ -66,7 +67,7 @@ h1 img{
     position: relative;
     bottom:50%;
     object-fit: contain;
-    z-index: 100;
+    z-index: 20;
 }
 .div-h1{
     width: 100%;
